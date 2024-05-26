@@ -1,9 +1,9 @@
 // Function to fetch exchangerate from API
-
+const apiUrlexchangerate = "https://api.frankfurter.app/latest?from=USD";
 let exchangeRate;
 async function fetchExchangeRate() {
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrlexchangerate);
     const data = await response.json();
     exchangeRate = data.rates.INR;
     console.log("1 USD = ₹", exchangeRate, );
@@ -32,7 +32,6 @@ function formatToIndianNumberingSystem(number) {
 
 // Fetching CryptoData
 
-const apiUrl = "https://api.frankfurter.app/latest?from=USD";
 const options = {
   headers: {
     'x-access-token': 'coinrankingcefebfe99352bc00f637a12ffa1dfa67f2420b578c110d62',
